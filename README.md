@@ -70,5 +70,6 @@ gradle clean test
 
 ### Уведомления в Telegram с использованием бота
 <p align="center">
+> По завершению тестов поступают уведомления в Telegram.
 <img title="Jenkins Build" src="images/screens/Telegram.png">
 </p>
