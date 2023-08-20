@@ -83,4 +83,14 @@ public class Specifications {
             .expectStatusCode(200)
             .expectBody(matchesJsonSchemaInClasspath("schemas/postRegister-response-schemas.json"))
             .build();
+    public static RequestSpecification deleteRequestSpec = with()
+            .log().uri()
+            .log().method()
+            .log().body()
+            .filter(withCustomTemplates())
+            .contentType(JSON);
+    public static ResponseSpecification deleteResponseSpec = new ResponseSpecBuilder()
+            .log(STATUS)
+            .expectStatusCode(204)
+            .build();
 }
