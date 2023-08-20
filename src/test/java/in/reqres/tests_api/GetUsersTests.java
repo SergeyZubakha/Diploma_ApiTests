@@ -1,17 +1,21 @@
 package in.reqres.tests_api;
 
-import org.junit.jupiter.api.Tag;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import in.reqres.models.*;
-
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static in.reqres.specs.Specifications.*;
 
+@Epic("API_Tests")
+@Feature("GetUsers")
 public class GetUsersTests extends TestBase {
     @Test
-    @Tag("ApiTests")
+    @DisplayName("Получение списка юзеров")
+    @Owner("s.zubakha")
+    @Severity(SeverityLevel.NORMAL)
     void getListUsersTest() {
 
         GetListUsersResponseModel listUsers = step("Make request", () ->
@@ -29,7 +33,9 @@ public class GetUsersTests extends TestBase {
         });
     }
     @Test
-    @Tag("ApiTests")
+    @DisplayName("Получение конкретного юзера")
+    @Owner("s.zubakha")
+    @Severity(SeverityLevel.NORMAL)
     void getSingleUserTest() {
 
         GetUser2ResponseModel user2 = step("Make request", () ->
@@ -43,12 +49,11 @@ public class GetUsersTests extends TestBase {
         step("Check response", () -> {
             assertEquals(2, user2.getData().getId());
             assertEquals("janet.weaver@reqres.in", user2.getData().getEmail());
-            assertEquals("Janet", user2.getData().getFirst_name());
-            assertEquals("Weaver", user2.getData().getLast_name());
+            assertEquals("Janet", user2.getData().getFirstName());
+            assertEquals("Weaver", user2.getData().getLastName());
             assertEquals("https://reqres.in/img/faces/2-image.jpg", user2.getData().getAvatar());
             assertEquals("https://reqres.in/#support-heading", user2.getSupport().getUrl());
             assertEquals("To keep ReqRes free, contributions towards server costs are appreciated!", user2.getSupport().getText());
         });
-
     }
 }

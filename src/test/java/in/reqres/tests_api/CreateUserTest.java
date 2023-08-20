@@ -2,18 +2,22 @@ package in.reqres.tests_api;
 
 import in.reqres.models.PostCreateBodyModel;
 import in.reqres.models.PostCreateResponseModel;
-import org.junit.jupiter.api.Tag;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import static in.reqres.specs.Specifications.postCreateRequestSpec;
 import static in.reqres.specs.Specifications.postCreateResponseSpec;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Epic("API_Tests")
+@Feature("CreateUser")
 public class CreateUserTest extends TestBase {
     @Test
-    @Tag("ApiTests")
+    @DisplayName("Создание нового юзера")
+    @Owner("s.zubakha")
+    @Severity(SeverityLevel.NORMAL)
     void postCreateUserTest() {
         PostCreateBodyModel newUser = new PostCreateBodyModel();
         newUser.setName("morpheus");
@@ -33,6 +37,5 @@ public class CreateUserTest extends TestBase {
             assertEquals("morpheus", postCreateResponseModel.getName());
             assertEquals("leader", postCreateResponseModel.getJob());
         });
-
     }
 }

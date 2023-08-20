@@ -1,6 +1,7 @@
 package in.reqres.tests_api;
 
-import org.junit.jupiter.api.Tag;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import in.reqres.models.*;
 import static io.qameta.allure.Allure.step;
@@ -8,9 +9,13 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static in.reqres.specs.Specifications.*;
 
+@Epic("API_Tests")
+@Feature("Authorizations")
 public class LoginTests extends TestBase {
     @Test
-    @Tag("ApiTests")
+    @DisplayName("Успешный логин")
+    @Owner("s.zubakha")
+    @Severity(SeverityLevel.CRITICAL)
     void postSuccessfulLoginTest() {
 
         LoginBodyLombokModel authData = new LoginBodyLombokModel();
@@ -31,7 +36,9 @@ public class LoginTests extends TestBase {
 
     }
     @Test
-    @Tag("ApiTests")
+    @DisplayName("Неуспешный логин")
+    @Owner("s.zubakha")
+    @Severity(SeverityLevel.CRITICAL)
     void postUnsuccessfulLoginTest() {
 
         PostUnsuccessfulLoginBodyModel postUnsuccessfulLoginBodyModel = new PostUnsuccessfulLoginBodyModel();

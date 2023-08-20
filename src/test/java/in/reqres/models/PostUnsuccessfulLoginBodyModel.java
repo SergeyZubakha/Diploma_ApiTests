@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class PostUnsuccessfulLoginBodyModel {
-    String email;
+    private String email;
 }

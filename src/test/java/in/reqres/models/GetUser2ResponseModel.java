@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class GetUser2ResponseModel {
-    GetUser2ResponseDataModel data;
-    GetUser2ResponseSupportModel support;
-
+    private GetUser2ResponseDataModel data;
+    private GetUser2ResponseSupportModel support;
 }

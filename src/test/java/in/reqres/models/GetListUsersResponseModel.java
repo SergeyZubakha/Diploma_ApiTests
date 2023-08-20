@@ -1,18 +1,21 @@
 package in.reqres.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-
 import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GetListUsersResponseModel {
-
-    int page, per_page, total, total_pages;
-    GetUsersResponseDataModel support;
-    List<DataClass> data;
-
+    private int page;
+    @JsonProperty("per_page")
+    private int perPage;
+    private int total;
+    @JsonProperty("total_pages")
+    private int totalPages;
+    private GetUsersResponseDataModel support;
+    private List<DataClass> data;
 }
 
 

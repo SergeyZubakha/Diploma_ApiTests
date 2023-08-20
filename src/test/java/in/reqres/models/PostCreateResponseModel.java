@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class PostCreateResponseModel {
-    String name, job, id, createdAt;
+    private String name, job, id, createdAt;
 }
