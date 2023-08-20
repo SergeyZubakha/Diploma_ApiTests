@@ -58,7 +58,7 @@ gradle clean test
 <img title="Jenkins Build" src="images/screens/AllureTestOps.png">
 </p>
 
-#### Тест-кейсы
+#### Тест-кейсы в Allure TestOps
 <p align="center">
 <img title="Jenkins Build" src="images/screens/AllureTestopsTK.png">
 </p>
