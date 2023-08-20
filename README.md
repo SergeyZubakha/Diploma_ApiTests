@@ -42,7 +42,11 @@ gradle clean test
 </p>
 
 ### Отчет в Allure report
-#### Основная страница отчета
+<p >
+  
+> Основная страница отчета
+
+</p>
 <p align="center">
 <img title="Jenkins Build" src="images/screens/AllureReport.png">
 </p>
@@ -53,7 +57,11 @@ gradle clean test
 </p>
 
 ### Интеграция с Allure TestOps
-#### Dashboard
+<p >
+  
+> Dashboard
+
+</p>
 <p align="center">
 <img title="Jenkins Build" src="images/screens/AllureTestOps.png">
 </p>
