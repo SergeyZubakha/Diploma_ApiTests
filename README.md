@@ -42,6 +42,7 @@ gradle clean test
 </p>
 
 ### Отчет в Allure report
+<a target="_blank" href="https://jenkins.autotests.cloud/job/DiplomaWork_Regres.in_ApiTests/4/allure/">Allure отчет</a> 
 <p >
   
 > Основная страница отчета
