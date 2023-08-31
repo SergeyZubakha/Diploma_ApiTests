@@ -53,7 +53,8 @@ gradle clean test
 <img title="Jenkins Build" src="images/screens/TK.png">
 </p>
 
-### Интеграция с Allure TestOps
+### Интеграция с Allure TestOps 
+<a target="_blank" href="https://allure.autotests.cloud/project/3628/dashboards"> Allure TestOps Dashboard</a>
 <p >
   
 > Dashboard
@@ -69,6 +70,7 @@ gradle clean test
 </p>
 
 ### Интеграция с Jira
+<a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-855">Задача в Jira</a>
 <p align="center">
 <img title="Jenkins Build" src="images/screens/Jira.png">
 </p>
