@@ -1,6 +1,8 @@
 package in.reqres.models;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+
 @Data
 public class GetUser2ResponseDataModel {
     private int id;

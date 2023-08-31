@@ -29,11 +29,7 @@
 gradle clean test
 ```
 
-#### Удаленный запуск тестов с параметрами:
-
-```bash
-gradle clean test
-```
+#### Удаленный запуск тестов реализован через сборку в Jenkins
 
 ### Запуск тестов в Jenkins
 <a target="_blank" href="https://jenkins.autotests.cloud/job/DiplomaWork_Regres.in_ApiTests/">Сборка в Jenkins</a>

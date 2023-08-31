@@ -3,6 +3,6 @@ package in.reqres.models;
 import lombok.Data;
 
 @Data
-public class LoginBodyLombokModel {
+public class LoginBodyModel {
     private String email, password;
 }

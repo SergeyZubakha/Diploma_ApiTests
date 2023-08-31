@@ -5,13 +5,16 @@ import in.reqres.models.PostRegisterResponseModel;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static in.reqres.specs.Specifications.*;
+
+import static in.reqres.specs.Specifications.postRegisterResponseSpecWithStatusCode200;
+import static in.reqres.specs.Specifications.requestSpec;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @Epic("API_Tests")
 @Feature("Registrations")
-public class RegisterTests extends TestBase{
+public class RegisterTests extends TestBase {
 
     @Test
     @DisplayName("Регистрация нового пользователя")
@@ -24,12 +27,12 @@ public class RegisterTests extends TestBase{
 
         PostRegisterResponseModel postRegisterResponseModel = step("Make request", () ->
 
-                given(postRegisterRequestSpec)
+                given(requestSpec)
                         .body(register)
                         .when()
                         .post("/register")
                         .then()
-                        .spec(postRegisterResponseSpec)
+                        .spec(postRegisterResponseSpecWithStatusCode200)
                         .extract().as(PostRegisterResponseModel.class));
 
         step("Check response", () -> {

@@ -1,13 +1,15 @@
 package in.reqres.tests_api;
 
+import in.reqres.models.GetListUsersResponseModel;
+import in.reqres.models.GetUser2ResponseModel;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import in.reqres.models.*;
+
+import static in.reqres.specs.Specifications.*;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static in.reqres.specs.Specifications.*;
 
 @Epic("API_Tests")
 @Feature("GetUsers")
@@ -19,11 +21,11 @@ public class GetUsersTests extends TestBase {
     void getListUsersTest() {
 
         GetListUsersResponseModel listUsers = step("Make request", () ->
-                given(getUsersRequestSpec)
+                given(requestSpec)
                         .when()
                         .get("/users?page=2")
                         .then()
-                        .spec(getUsersResponseSpec)
+                        .spec(getUsersResponseSpecWithStatusCode200)
                         .extract().as(GetListUsersResponseModel.class));
 
         step("Check response", () -> {
@@ -32,6 +34,7 @@ public class GetUsersTests extends TestBase {
             assertEquals(7, listUsers.getData().get(0).getId());
         });
     }
+
     @Test
     @DisplayName("Получение конкретного юзера")
     @Owner("s.zubakha")
@@ -39,11 +42,11 @@ public class GetUsersTests extends TestBase {
     void getSingleUserTest() {
 
         GetUser2ResponseModel user2 = step("Make request", () ->
-                given(getUser2RequestSpec)
+                given(requestSpec)
                         .when()
                         .get("/users/2")
                         .then()
-                        .spec(getUser2ResponseSpec)
+                        .spec(getUser2ResponseSpecWithStatusCode200)
                         .extract().as(GetUser2ResponseModel.class));
 
         step("Check response", () -> {

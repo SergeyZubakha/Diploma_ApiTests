@@ -5,8 +5,9 @@ import in.reqres.models.PostCreateResponseModel;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static in.reqres.specs.Specifications.postCreateRequestSpec;
-import static in.reqres.specs.Specifications.postCreateResponseSpec;
+
+import static in.reqres.specs.Specifications.postCreateResponseSpecWithStatusCode201;
+import static in.reqres.specs.Specifications.requestSpec;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -25,12 +26,12 @@ public class CreateUserTest extends TestBase {
 
         PostCreateResponseModel postCreateResponseModel = step("Make request", () ->
 
-                given(postCreateRequestSpec)
+                given(requestSpec)
                         .body(newUser)
                         .when()
                         .post("/users")
                         .then()
-                        .spec(postCreateResponseSpec)
+                        .spec(postCreateResponseSpecWithStatusCode201)
                         .extract().as(PostCreateResponseModel.class));
 
         step("Check response", () -> {
